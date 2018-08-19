@@ -1,0 +1,8 @@
+name: BuyFix
+main: BuyFix\Main
+author: HumYaiJang
+version: 1.0.0
+api: 3.0.6
+commands:
+ buyfix:
+  description: Buyfix!
