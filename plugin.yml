@@ -4,5 +4,5 @@ author: HumYaiJang
 version: 1.0.0
 api: 3.0.6
 commands:
- buyfix:
-  description: Buyfix!
+ fix:
+  description: §l§bFixes the item in your hand for §e10k
