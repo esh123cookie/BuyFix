@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onCommand(CommandSender $sender, Command $command, String $label, array $args) : bool {
-        if($command->getName() === "buyfix"){
+        if($command->getName() === "fix"){
           if(!$sender instanceof Player){
             $sender->sendMessage("Please use command in game!");
             return true;
