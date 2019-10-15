@@ -21,23 +21,23 @@ class Main extends PluginBase implements Listener{
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    			$this->getLogger()->info("BuyFix enable");
+    			$this->getLogger()->info("Fix enable");
     			$this->saveResource("config.yml");  			
     }
     
     public function onDisable(){
-        $this->getLogger()->info("BuyFix Disable");
+        $this->getLogger()->info("Fix Disable");
     }
     
     public function onCommand(CommandSender $sender, Command $command, String $label, array $args) : bool {
-        if($command->getName() === "buyfix"){
+        if($command->getName() === "fix"){
           if(!$sender instanceof Player){
             $sender->sendMessage("Please use command in game!");
             return true;
           }
           $economy = EconomyAPI::getInstance();
           $mymoney = $economy->myMoney($sender);
-          $cash = $this->getConfig()->get("price-buyfix");
+          $cash = $this->getConfig()->get("price-fix");
           if($mymoney >= $cash){
             $economy->reduceMoney($sender, $cash);
             $item = $sender->getInventory()->getItemInHand();
@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener{
 						        }
 						     }
 					      $sender->getInventory()->addItem($newitem);
-					      $sender->sendMessage("§a" . $item->getName() . " Have been fixed now!");
+					      $sender->sendMessage("§o§l§b" . $item->getName() . " §r§3Has been fixed now!");
 					      return true;
 					    } else {
 				        	$sender->sendMessage("§cPlease hold armor or item in your hand!");
@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener{
 					    }
             return true;
           } else {
-            $sender->sendMessage("§cYou have not enough money for $cash to buy fix.");
+            $sender->sendMessage("§cYou have not enough money for $cash to fix your item.");
             return true;
           }
         }
