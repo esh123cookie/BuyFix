@@ -1,8 +1,8 @@
 name: BuyFix
 main: BuyFix\Main
-author: HumYaiJang
+author: HumYaiJang\edited by esh123unicorn
 version: 1.0.0
-api: 3.0.6
+api: 3.9.4
 commands:
  buyfix:
-  description: Buyfix!
+  description: §b§lFixes the item you are holding for §e$10k
