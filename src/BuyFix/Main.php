@@ -21,23 +21,23 @@ class Main extends PluginBase implements Listener{
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    			$this->getLogger()->info("Fix enable");
+    			$this->getLogger()->info("BuyFix enable");
     			$this->saveResource("config.yml");  			
     }
     
     public function onDisable(){
-        $this->getLogger()->info("Fix Disable");
+        $this->getLogger()->info("BuyFix Disable");
     }
     
     public function onCommand(CommandSender $sender, Command $command, String $label, array $args) : bool {
-        if($command->getName() === "fix"){
+        if($command->getName() === "buyfix"){
           if(!$sender instanceof Player){
             $sender->sendMessage("Please use command in game!");
             return true;
           }
           $economy = EconomyAPI::getInstance();
           $mymoney = $economy->myMoney($sender);
-          $cash = $this->getConfig()->get("price-fix");
+          $cash = $this->getConfig()->get("price-buyfix");
           if($mymoney >= $cash){
             $economy->reduceMoney($sender, $cash);
             $item = $sender->getInventory()->getItemInHand();
