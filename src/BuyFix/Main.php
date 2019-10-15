@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener{
           }
           $economy = EconomyAPI::getInstance();
           $mymoney = $economy->myMoney($sender);
-          $cash = $this->getConfig()->get("price-buyfix");
+          $cash = $this->getConfig()->get("price-fix");
           if($mymoney >= $cash){
             $economy->reduceMoney($sender, $cash);
             $item = $sender->getInventory()->getItemInHand();
