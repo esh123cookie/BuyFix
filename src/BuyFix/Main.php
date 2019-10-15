@@ -55,15 +55,15 @@ class Main extends PluginBase implements Listener{
 						        }
 						     }
 					      $sender->getInventory()->addItem($newitem);
-					      $sender->sendMessage("§a" . $item->getName() . " Have been fixed now!");
+					      $sender->sendMessage("§a" . $item->getName() . " §aHas been fixed now!");
 					      return true;
 					    } else {
-				        	$sender->sendMessage("§cPlease hold armor or item in your hand!");
+				        	$sender->sendMessage("§cPlease hold a piece of armor or an item in your hand!");
 					        return false;
 					    }
             return true;
           } else {
-            $sender->sendMessage("§cYou have not enough money for $cash to buy fix.");
+            $sender->sendMessage("§cYou do not have not enough money for $cash to fix your item.");
             return true;
           }
         }
