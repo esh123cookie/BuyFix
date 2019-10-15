@@ -5,4 +5,4 @@ version: 1.0.0
 api: 3.0.6
 commands:
  fix:
-  description: §l§bFixes the item in your hand
+  description: §l§bFixes the item in your hand for §e10k
